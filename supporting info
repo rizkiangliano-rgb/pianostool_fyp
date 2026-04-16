@@ -1,0 +1,22 @@
+Supporting Information
+Data Curation Details
+The data was curated from the tmQMg dataset by Kneiding et al.(1)
+Bond threshold is inferred using the sum of covalent radii between two atoms,(2) the standard deviation, and a constant 0.225 (which is based on half of the 0.45 constant from Rasmussen et al. to account for the standard deviation)(3), with the exact formula:
+RA + RB + k(√(〖σ_A〗^2+〖σ_B〗^2 )) +0.225
+The k chosen was 3 to reflect the normal distribution that covers up to 99.7% data points
+Exclusion list:
+	Seat size not 5 or 6
+	Seat not a cyclic ring
+	Anionic complexes
+	Leg number not 3
+	π or σ ligands as leg ligands
+	carborane ligands
+	oxidation state (detected from SMILES provided in the tmQMg dataset) > 5
+	rhodium and iridium with six membered arene rings
+	tridentate legs
+	certain rings with missing hydrogen
+	fulvenes (by applying C-C distance < 1.425 and not in a fused aromatic ring)
+	cyclopentadienone and related compounds (anything with oxygen having only 1 neighbour according to the graph)
+	bidentate legs with complex chelate ring system (can be defined as having multiple chelate rings of similar size)
+Featurization Details
+Alignment of coordinates was done using the Kabsch algorithm
